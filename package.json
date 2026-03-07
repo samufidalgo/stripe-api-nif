@@ -1,0 +1,9 @@
+{
+  "name": "validador-nif-stripe-api",
+  "version": "1.0.0",
+  "description": "API serverless para crear sesión Stripe Checkout (suscripción)",
+  "main": "api/create-checkout-session.js",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
