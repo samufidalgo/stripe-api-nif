@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Pago completado!</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, #f0f7ff 0%, #fff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #1a365d;
+    }
+    .card {
+      max-width: 400px;
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+      border: 2px solid #86efac;
+    }
+    .icon { font-size: 3rem; margin-bottom: 16px; color: #16a34a; }
+    h1 { font-size: 1.5rem; color: #166534; margin-bottom: 12px; }
+    p { color: #475569; margin-bottom: 24px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">✓</div>
+    <h1>¡Pago completado! Ya eres Pro</h1>
+    <p>Cierra esta pestaña y abre la extensión para disfrutar de todas las funciones Pro.</p>
+  </div>
+  <script>
+    try {
+      window.close();
+    } catch (e) {}
+  </script>
+</body>
+</html>

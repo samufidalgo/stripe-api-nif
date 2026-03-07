@@ -2,7 +2,7 @@
  * Serverless: crea una sesión de Stripe Checkout (suscripción).
  * Despliega en Vercel y define en el entorno:
  *   STRIPE_SECRET_KEY, STRIPE_PRICE_ID
- * La extensión envía POST con { success_url, cancel_url }.
+ * success_url siempre es la página de éxito en Vercel (Stripe no redirige a chrome-extension://).
  */
 const Stripe = require('stripe');
 
@@ -33,12 +33,9 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'JSON inválido' });
   }
 
-  const successUrl = body.success_url;
-  const cancelUrl = body.cancel_url || body.success_url;
   const priceIdFromBody = body.price_id;
-  if (!successUrl || !successUrl.startsWith('chrome-extension://')) {
-    return res.status(400).json({ error: 'success_url debe ser una URL chrome-extension://' });
-  }
+  const successUrl = 'https://stripe-api-nif-fgbi.vercel.app/success.html';
+  const cancelUrl = body.cancel_url || successUrl;
 
   const stripe = new Stripe(secret);
   const finalPriceId = priceIdFromBody || priceId;
