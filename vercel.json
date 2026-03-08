@@ -2,11 +2,13 @@
   "version": 2,
   "builds": [
     { "src": "api/create-checkout-session.js", "use": "@vercel/node" },
-    { "src": "api/success.js", "use": "@vercel/node" }
+    { "src": "api/success.js", "use": "@vercel/node" },
+    { "src": "api/privacy.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" },
     { "src": "/success.html", "dest": "/api/success.js" },
-    { "src": "/api/success", "dest": "/api/success.js" }
+    { "src": "/api/success", "dest": "/api/success.js" },
+    { "src": "/privacy.html", "dest": "/api/privacy.js" }
   ]
 }

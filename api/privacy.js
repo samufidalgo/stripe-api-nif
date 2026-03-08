@@ -1,0 +1,70 @@
+/**
+ * Sirve la página de política de privacidad.
+ * Contenido igual que public/privacy.html. URL: /privacy.html (vía vercel.json)
+ */
+const html = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad — Validador NIF/CIF/NIE</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, #f0f7ff 0%, #fff 100%);
+      min-height: 100vh;
+      padding: 32px 24px;
+      color: #1a365d;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+    h1 { font-size: 1.5rem; color: #1e40af; margin-bottom: 8px; }
+    .sub { font-size: 0.9rem; color: #64748b; margin-bottom: 32px; }
+    h2 { font-size: 1.1rem; color: #1e40af; margin-top: 28px; margin-bottom: 10px; }
+    p, li { color: #475569; margin-bottom: 12px; font-size: 0.95rem; }
+    ul { padding-left: 24px; margin-bottom: 12px; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .updated { font-size: 0.85rem; color: #94a3b8; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Política de privacidad</h1>
+    <p class="sub">Validador NIF/CIF/NIE — Extensión para Chrome</p>
+    <p>Esta política describe cómo se tratan los datos en relación con la extensión de navegador <strong>Validador NIF, CIF y NIE</strong>, dirigida a usuarios en España.</p>
+    <h2>1. Responsable</h2>
+    <p>El responsable del tratamiento de los datos asociados al uso de la extensión es el desarrollador o entidad que la publica, con la que puedes contactar a través de los medios indicados en la ficha de la extensión en Chrome Web Store.</p>
+    <h2>2. Datos que utiliza la extensión</h2>
+    <ul>
+      <li><strong>Uso local:</strong> La extensión guarda en tu navegador (almacenamiento local y sincronizado de Chrome) únicamente: número de validaciones realizadas por día, fecha del día, estado de suscripción Pro (activada o no) e historial de las últimas validaciones si usas la versión Pro. Los números que introduces para validar no se envían a ningún servidor.</li>
+      <li><strong>Validación:</strong> La comprobación de NIF, CIF y NIE se realiza de forma local en tu dispositivo; no se transmite el contenido que validas a terceros.</li>
+    </ul>
+    <h2>3. Pagos con Stripe</h2>
+    <p>Si contratas la versión Pro, el pago se procesa a través de <strong>Stripe</strong>. La extensión y este sitio solo redirigen a Stripe para el pago; no almacenamos ni tenemos acceso a los datos de tu tarjeta. Stripe dispone de su propia política de privacidad y cumple con la normativa aplicable. La confirmación de que la suscripción Pro está activa se guarda localmente en tu navegador (estado Pro).</p>
+    <h2>4. No venta de datos</h2>
+    <p>No vendemos ni cedemos tus datos a terceros con fines comerciales. No utilizamos los datos almacenados localmente para publicidad ni para crear perfiles sobre ti.</p>
+    <h2>5. Base legal y destinatarios</h2>
+    <p>El tratamiento se basa en tu consentimiento al usar la extensión y, en su caso, al realizar el pago. Los datos permanecen en tu navegador o en los sistemas de Stripe para el pago; no hay otros destinatarios de datos personales por parte de la extensión.</p>
+    <h2>6. Derechos</h2>
+    <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación y portabilidad ante el responsable indicado arriba. Para datos en tu navegador, puedes eliminar la extensión o borrar los datos del sitio/almacenamiento de la extensión desde la configuración de Chrome. Para los datos del pago, consulta la política de privacidad de Stripe.</p>
+    <h2>7. Cambios</h2>
+    <p>Cualquier cambio relevante en esta política se reflejará en esta página. Se recomienda consultarla de forma periódica.</p>
+    <p class="updated">Última actualización: 2025</p>
+  </div>
+</body>
+</html>`;
+
+module.exports = (req, res) => {
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.status(200).send(html);
+};
