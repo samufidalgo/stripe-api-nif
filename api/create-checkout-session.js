@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
   }
 
   const priceIdFromBody = body.price_id;
-  const successUrl = 'https://stripe-api-nif-fgbi.vercel.app/success.html';
+  const successUrl = 'https://stripe-api-nif.vercel.app/success.html';
   const cancelUrl = body.cancel_url || successUrl;
 
   const stripe = new Stripe(secret);
